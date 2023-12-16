@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw51jfptpx8xv"]
+
+[ext_resource type="Script" path="res://Vehicles/crawler_cb_3d.gd" id="1_orbem"]
+[ext_resource type="PackedScene" uid="uid://ctf24ri3fvjfn" path="res://bimports/SEV_003.glb" id="1_xmwei"]
+[ext_resource type="PackedScene" uid="uid://drw18f5c1rms3" path="res://Vehicles/Parts/common_lamp.tscn" id="3_0mnbe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m54y8"]
+size = Vector3(11.205, 9.23, 9.435)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o5uq"]
+albedo_color = Color(0.262745, 0.352941, 0.427451, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qqxw6"]
+
+[node name="CrawlerCB3D" type="CharacterBody3D"]
+script = ExtResource("1_orbem")
+
+[node name="SEV_003" parent="." instance=ExtResource("1_xmwei")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4.63204, 0)
+shape = SubResource("BoxShape3D_m54y8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.933949, 0.357406, 0, -0.357406, 0.933949, 0, 10.3729, 15.1758)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(22.435, 0, 0, 0, 22.435, 0, 0, 0, 22.435, 0, 0, -11.369)
+visible = false
+material_override = SubResource("StandardMaterial3D_0o5uq")
+mesh = SubResource("PlaneMesh_qqxw6")
+
+[node name="CommonLamp" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17651, 5.3005, -2.79353)
+
+[node name="CommonLamp3" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.16563, 5.3005, 3.04099)
+
+[node name="CommonLamp4" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.11808, 5.3005, 3.04099)
+
+[node name="CommonLamp5" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.16563, 3.23752, 4.90385)
+
+[node name="CommonLamp6" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.11808, 3.23752, 4.90385)
+
+[node name="CommonLamp11" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16563, 3.23752, -4.9061)
+
+[node name="CommonLamp12" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11808, 3.23752, -4.9061)
+
+[node name="CommonLamp7" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.54018, 3.85941, -1.99582)
+
+[node name="CommonLamp8" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.56379, 3.85941, 1.94772)
+
+[node name="CommonLamp9" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.65192, 3.85941, -1.99582)
+
+[node name="CommonLamp10" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.62831, 3.85941, 1.94772)
+
+[node name="CommonLamp2" parent="." instance=ExtResource("3_0mnbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10676, 5.3005, -2.79353)

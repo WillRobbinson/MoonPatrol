@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://drw18f5c1rms3"]
+
+[ext_resource type="PackedScene" uid="uid://8tk5tl6f3dv4" path="res://Vehicles/Parts/CommonLamp_003.glb" id="1_s6dkn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5advt"]
+albedo_color = Color(0.305882, 0.619608, 0.380392, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fdv5v"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k48t7"]
+
+[node name="CommonLamp" type="Node3D"]
+
+[node name="CommonLamp_003" parent="." instance=ExtResource("1_s6dkn")]
+
+[node name="SpotLight3D_FL2" type="SpotLight3D" parent="CommonLamp_003"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00181073, -0.000793144, -0.28236)
+light_color = Color(0.729412, 0.701961, 0.415686, 1)
+light_energy = 2.075
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 2.418
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
+spot_range = 32.595
+spot_attenuation = 0.0426889
+spot_angle_attenuation = 0.210224
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.79, 0, 0, 0, 0.745, 0, 0, 0, 9.79, 0, -3.42246, -13.5308)
+top_level = true
+visible = false
+material_override = SubResource("StandardMaterial3D_5advt")
+mesh = SubResource("BoxMesh_fdv5v")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.624002, 0, 0.781422, 0, 1, 0, -0.781422, 0, 0.624002, 8.78143, 0, 0)
+visible = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.28557, -2.54603)
+top_level = true
+visible = false
+mesh = SubResource("BoxMesh_k48t7")
